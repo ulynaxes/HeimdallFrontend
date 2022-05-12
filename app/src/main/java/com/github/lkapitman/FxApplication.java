@@ -12,8 +12,12 @@ import java.net.URL;
 
 public class FxApplication extends Application {
 
+    @Getter
+    private static Stage stage;
+
     @Override
     public void start(Stage stage) throws Exception {
+        FxApplication.stage = stage;
         var loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/main.fxml"));
         Parent root = loader.load();

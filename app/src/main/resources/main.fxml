@@ -6,36 +6,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.lkapitman.controller.MainController">
    <children>
-      <TextArea layoutX="14.0" layoutY="14.0" prefHeight="280.0" prefWidth="765.0" promptText="Logs" style="-fx-border-color: #808080; -fx-border-radius: 4px;" />
-      <TextArea layoutX="14.0" layoutY="302.0" prefHeight="1.0" prefWidth="765.0" style="-fx-border-color: #808080; -fx-border-radius: 4px;" text="Wait Device...">
+      <TextArea fx:id="logs" layoutX="14.0" layoutY="14.0" prefHeight="280.0" prefWidth="765.0" promptText="Logs" style="-fx-border-color: #808080; -fx-border-radius: 4px;" />
+      <TextArea fx:id="wait_device" layoutX="14.0" layoutY="302.0" prefHeight="1.0" prefWidth="765.0" style="-fx-border-color: #808080; -fx-border-radius: 4px;" text="Wait Device...">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </TextArea>
       <AnchorPane layoutX="14.0" layoutY="356.0" prefHeight="221.0" prefWidth="204.0" style="-fx-border-color: #808080; -fx-border-radius: 4px;">
          <children>
-            <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="no-reboot" />
+            <CheckBox fx:id="no_reboot" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="no-reboot" />
          </children>
       </AnchorPane>
-      <Button layoutX="638.0" layoutY="518.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="FLASH!">
+      <Button fx:id="flash_btn" layoutX="638.0" layoutY="518.0" mnemonicParsing="false" onAction="#flash" prefHeight="59.0" prefWidth="141.0" text="FLASH!">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="230.0" layoutY="518.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="UPDATE">
+      <Button fx:id="update_btn" layoutX="230.0" layoutY="518.0" mnemonicParsing="false" onAction="#update" prefHeight="59.0" prefWidth="141.0" text="UPDATE">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <TextArea layoutX="231.0" layoutY="445.0" prefHeight="44.0" prefWidth="550.0" style="-fx-border-color: #808080; -fx-border-radius: 4px;" text="Path to flash-file">
+      <TextArea fx:id="path_to_file" layoutX="231.0" layoutY="423.0" prefHeight="44.0" prefWidth="550.0" style="-fx-border-color: #808080; -fx-border-radius: 4px;" text="Path to flash-file">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </TextArea>
-      <Button layoutX="435.0" layoutY="518.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="EXIT">
+      <Button fx:id="exit_btn" layoutX="435.0" layoutY="518.0" mnemonicParsing="false" onAction="#exit" prefHeight="59.0" prefWidth="141.0" text="EXIT">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="open_btn" onAction="#open" layoutX="638.0" layoutY="473.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="141.0" text="OPEN FILE">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
